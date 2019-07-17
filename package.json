@@ -21,6 +21,7 @@
     "graphql-norm": "^0.12.1"
   },
   "peerDependencies": {
+    "@types/graphql": "^0.13.0 || ^14.0.0",
     "graphql": "^0.13.0 || ^14.0.0"
   },
   "devDependencies": {
