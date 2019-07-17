@@ -7,13 +7,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [0.1.1] - 2018-06-08
+## [0.1.2] - 2018-07-17
 
 ### Fixed
 
 - Fix invalid dependencies.
 
-## [0.1.0] - 2018-06-08
+## [0.1.1] - 2018-07-16
+
+### Fixed
+
+- Fix invalid dependencies.
+
+## [0.1.0] - 2018-07-16
 
 ### Added
 
