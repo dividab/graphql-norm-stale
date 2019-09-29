@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/dividab/graphql-norm-stale/compare/v0.2.0...master)
 
-## [0.1.2](https://github.com/dividab/graphql-norm-stale/compare/v0.1.2...v0.2.0) - 2019-09-29
+## [0.2.0](https://github.com/dividab/graphql-norm-stale/compare/v0.1.2...v0.2.0) - 2019-09-29
 
 ### Added
 
