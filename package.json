@@ -1,6 +1,6 @@
 {
   "name": "graphql-norm-stale",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Staleness tracking for normalized GraphQL responses",
   "main": "lib/index.js",
   "types": "lib/index",
