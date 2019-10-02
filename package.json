@@ -21,14 +21,12 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "graphql-norm": "^1.1.0"
+    "graphql-norm": "^1.2.0"
   },
   "peerDependencies": {
-    "@types/graphql": "^0.13.0 || ^14.0.0",
-    "graphql": "^0.13.0 || ^14.0.0"
+    "graphql": "^14.5.8"
   },
   "devDependencies": {
-    "@types/graphql": "^14.2.2",
     "@types/jest": "^24.0.15",
     "@types/node": "^12.0.12",
     "@typescript-eslint/eslint-plugin": "^2.3.1",
@@ -39,7 +37,7 @@
     "eslint-config-divid": "^0.2.1",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-functional": "^1.0.0-rc.2",
-    "graphql": "^14.4.2",
+    "graphql": "^14.5.8",
     "husky": "^2.4.1",
     "jest": "^24.8.0",
     "lint-staged": "^9.1.0",
