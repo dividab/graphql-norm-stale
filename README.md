@@ -71,15 +71,15 @@ const cachedResponse = denormalize(query, {}, cache);
 The isStale() function takes a map of stale fields and a map of fields and checks if the fields are among the stale entries. The stale field map contains another map of fields for each key. This secondary map can only have entries with value true. The reason a map is used instead of an array is to have faster checking of membership of fields.
 
 ```ts
-isStale(staleMap: StaleMap, fields: FieldsMap): boolean
+isStale(staleMap: FieldsMap, fields: FieldsMap): boolean
 ```
 
-### updateStale()
+### clearStale()
 
-The updateStale() function takes a map of normalized GraphQL objects and a staleness map. It removes any entires in the staleness map that are present in the normalized map.
+The `clearStale()` function takes a map of normalized GraphQL objects and a map of stale fields. It removes any fields in the staleness map that are present in the normalized map.
 
 ```ts
-updateStale(normMap: NormMap, staleMap: StaleMap): StaleMap
+clearStale(normMap: NormMap, staleMap: FieldsMap): FieldsMap
 ```
 
 ## Related packages
