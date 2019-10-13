@@ -5,7 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased](https://github.com/dividab/graphql-norm-stale/compare/v0.4.0...master)
+## [Unreleased](https://github.com/dividab/graphql-norm-stale/compare/v0.5.0...master)
+
+## [0.5.0](https://github.com/dividab/graphql-norm-stale/compare/v0.4.0...v0.5.0) - 2019-10-13
+
+### Added
+
+- Add patches for invlidation/staleness from the graphql-norm-patch package. See PR [#2](https://github.com/dividab/graphql-norm-stale/pull/2) for more info.
 
 ## [0.4.0](https://github.com/dividab/graphql-norm-stale/compare/v0.3.0...v0.4.0) - 2019-10-13
 
