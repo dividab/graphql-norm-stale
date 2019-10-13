@@ -1,12 +1,14 @@
 import * as fs from "fs";
 
 export function loadTests<T>(path: string): ReadonlyArray<T> {
+  // eslint-disable-next-line no-path-concat
   const testBasePath = __dirname + "/" + path;
   const importedTests = fs
     .readdirSync(testBasePath)
-    // .filter(f => f.match(/\.test\.ts$/i))
+    // eslint-disable-next-line
     .map(f => require(testBasePath + f))
-    .map(importedModule => importedModule.test as T);
+    .map(importedModule => importedModule.tests as T)
+    .flat();
 
   return importedTests;
 }
@@ -23,7 +25,7 @@ export interface UtilsTest {
 export function onlySkip<T extends UtilsTest>(
   tests: ReadonlyArray<T>
 ): ReadonlyArray<T> {
-  const skips = tests.filter(t => !!!t.skip);
+  const skips = tests.filter(t => !t.skip);
   const onlys = skips.filter(t => t.only === true);
   if (onlys.length > 0) {
     return onlys;
