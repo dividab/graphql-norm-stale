@@ -1,23 +1,13 @@
 import { NormMap, FieldsMap } from "graphql-norm";
 
-export interface StaleMap {
-  readonly [key: string]: StaleFields | undefined;
-}
-
-export interface StaleFields {
-  readonly [field: string]: true | undefined;
-}
-
-type Mutable<T> = { -readonly [P in keyof T]: T[P] }; // Remove readonly
-
 /**
  * Checks if any of the provided fields are stale
  */
-export function isStale(staleMap: StaleMap, fields: FieldsMap): boolean {
+export function isStale(staleMap: FieldsMap, fields: FieldsMap): boolean {
   for (const key of Object.keys(fields)) {
     for (const field of fields[key]) {
       const staleObj = staleMap[key];
-      if (staleObj && staleObj[field]) {
+      if (staleObj && staleObj.has(field)) {
         return true;
       }
     }
@@ -28,32 +18,29 @@ export function isStale(staleMap: StaleMap, fields: FieldsMap): boolean {
 /**
  * Removes the stale flag for fields that are present in the normalized result
  */
-export function updateStale(normMap: NormMap, staleMap: StaleMap): StaleMap {
-  type MutableStaleMap = Mutable<StaleMap>;
-
+export function clearStale(normMap: NormMap, staleMap: FieldsMap): FieldsMap {
+  type MutableFieldsMap = { [key: string]: Set<string> };
   // Make a shallow copy to enable shallow mutation
-  const staleCopy: MutableStaleMap = { ...staleMap };
+  const staleCopy: MutableFieldsMap = { ...(staleMap as MutableFieldsMap) };
 
   // Check all stale fields against the normalized map
   for (const staleKey of Object.keys(staleCopy)) {
     const normObj = normMap[staleKey];
     if (normObj !== undefined) {
       const staleFields = staleCopy[staleKey];
-      const staleFieldKeys = Object.keys(staleFields || {});
+      let staleFieldKeyCount = staleFields.size;
 
-      let staleFieldKeyCount = staleFieldKeys.length;
-
-      // Check all fields of the stale normalized object against the corresponding normalized object in normalized map
+      // Check all fields of the stale against the corresponding normalized object fields
       // If a field exists in the normalized map, then it should not be stale anymore
-      let staleFieldsCopy: Mutable<StaleFields> | undefined = undefined;
-      for (const staleFieldKey of staleFieldKeys) {
+      let staleFieldsCopy: Set<string> | undefined = undefined;
+      for (const staleFieldKey of staleFields) {
         for (const normField of Object.keys(normObj)) {
           if (normField === staleFieldKey) {
             if (!staleFieldsCopy) {
-              staleFieldsCopy = { ...staleFields };
+              staleFieldsCopy = new Set(staleFields);
               staleCopy[staleKey] = staleFieldsCopy;
             }
-            delete staleFieldsCopy[staleFieldKey];
+            staleFieldsCopy.delete(staleFieldKey);
             staleFieldKeyCount--;
           }
         }
