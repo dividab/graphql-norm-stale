@@ -1,6 +1,6 @@
-import { tests } from "./update-stale-data";
+import { tests } from "./clear-stale-data";
 import { onlySkip } from "./test-data-utils";
-import { updateStale } from "../src/stale";
+import { clearStale } from "../src/stale";
 
 function deepFreeze(o: any): any {
   Object.freeze(o);
@@ -24,7 +24,7 @@ describe("updateStale() with special test data", () => {
     test(item.name, done => {
       // Freeze the test so we test that the function does not mutate the inputs on any level
       deepFreeze(item);
-      const actual = updateStale(item.normMap, item.staleBefore);
+      const actual = clearStale(item.normMap, item.staleBefore);
       const expected = item.staleAfter;
       expect(actual).toEqual(expected);
       done();

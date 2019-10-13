@@ -3,11 +3,7 @@ import { OneTest } from "../is-stale-test-def";
 export const test: OneTest = {
   name: "with stale true",
   staleMap: {
-    "Post;123": {
-      author: true,
-      title: true,
-      comments: true
-    }
+    "Post;123": new Set(["author", "title", "comments"])
   },
   fields: {
     ROOT_QUERY: ["posts"],
