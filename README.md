@@ -82,6 +82,22 @@ The `clearStale()` function takes a map of normalized GraphQL objects and a map 
 clearStale(normMap: NormMap, staleMap: FieldsMap): FieldsMap
 ```
 
+### invalidateEntity()
+
+Creates a patch for invalidation of an entity.
+
+### invalidateField()
+
+Creates a patch for invalidation of an entity's field.
+
+### applyPatches()
+
+Returns a new map of stale fields with the patches applied. It needs the `normMap` in order to do recursive patches.
+
+```ts
+applyPatches(normMap: NormMap, staleMap: FieldsMap): FieldsMap
+```
+
 ## Related packages
 
 - [graphql-norm](https://www.npmjs.com/package/graphql-norm)
