@@ -1,1 +1,1 @@
-export { updateStale, isStale, StaleMap, StaleFields } from "./stale";
+export { clearStale, isStale } from "./stale";
