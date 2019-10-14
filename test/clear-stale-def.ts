@@ -7,4 +7,5 @@ export interface OneTest {
   readonly normMap: NormMap;
   readonly staleBefore: FieldsMap;
   readonly staleAfter: FieldsMap;
+  readonly clearedAfter: FieldsMap;
 }
