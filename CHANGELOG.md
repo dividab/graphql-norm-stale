@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 
-- Return both the new stale map and the cleared fields from `clearStale()`.
+- Return both the new stale map and the cleared fields from `clearStale()`. See PR [#3](https://github.com/dividab/graphql-norm-stale/pull/3).
 
 ## [0.5.0](https://github.com/dividab/graphql-norm-stale/compare/v0.4.0...v0.5.0) - 2019-10-13
 
