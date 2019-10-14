@@ -8,6 +8,7 @@ export const tests: ReadonlyArray<OneTest> = [
     name: "remove last field",
     normMap: { myid: { id: "myid", name: "foo" } },
     staleBefore: { myid: new Set(["name"]) },
-    staleAfter: {}
+    staleAfter: {},
+    clearedAfter: { myid: new Set(["name"]) }
   }
 ];
