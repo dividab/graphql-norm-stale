@@ -4,10 +4,7 @@
   "description": "Staleness tracking for normalized GraphQL responses",
   "main": "lib/index.js",
   "types": "lib/index",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dividab/graphql-norm-stale.git"
-  },
+  "repository": "https://github.com/dividab/graphql-norm-stale",
   "keywords": [
     "graphql",
     "normalization",
@@ -17,6 +14,14 @@
   ],
   "author": "Jonas Kello <jonas.kello@divid.se>",
   "license": "MIT",
+  "files": [
+    "/lib",
+    "/src",
+    "package.json",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
   "engines": {
     "node": ">=12.0.0"
   },

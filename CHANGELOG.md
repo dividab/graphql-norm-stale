@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased](https://github.com/dividab/graphql-norm-stale/compare/v0.6.0...master)
 
+## [v0.6.1](https://github.com/dividab/graphql-norm-stale/compare/v0.6.0...v0.6.1) - 2020-03-29
+
+### Added
+
+- Include typescript source from `src/` in published npm package.
+
 ## [0.6.0](https://github.com/dividab/graphql-norm-stale/compare/v0.5.0...v0.6.0) - 2019-10-14
 
 ### Changed
